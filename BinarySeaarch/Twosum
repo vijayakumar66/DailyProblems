@@ -1,0 +1,49 @@
+package BinarySearch;
+
+import java.util.Arrays;
+
+public class TwoSumII {
+	static int[] twoSum(int[]numbers,int target) { 
+/*	{
+		int start=0,end=numbers.length-1;
+		int[] res= new int[2];
+		//int target1=target;
+		while(start<=end) {
+			int mid=start+(end-start)/2;
+			if(numbers[mid]<target&&numbers[mid+1]>target)
+			{
+				end=mid;
+			 res=leftSide(numbers, start,end, target);
+				
+			}
+
+		}
+		return res;
+		
+	    
+	}     */
+	int left=0,right=numbers.length-1;
+	while(numbers[left]+numbers[right]!=target)
+    {
+         if(numbers[left]+numbers[right]<target)
+        {
+            left++;
+        }   
+        else
+        {
+            right--;
+        }
+        
+    }
+    return new int[] {left+1,right+1};
+	
+}	
+
+	public static void main(String[] args) {
+		int[] numbers= {2,7,11,23};
+		int target=9;
+		System.out.println(Arrays.toString(twoSum(numbers,target)));
+	
+
+}
+}
